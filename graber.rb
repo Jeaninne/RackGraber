@@ -1,5 +1,4 @@
 require 'net/http'
-require 'nokogiri'
 require 'open-uri'
 
 class Link_graber
@@ -7,8 +6,14 @@ class Link_graber
  def initialize
  end
 
-  def call(env)
-    form = <<html
+ def call(env)
+    form = main_form
+    status, headers = 200, {"Content-Type" => "text/html"}
+    [status, headers, [form]]
+  end
+
+ def main_form
+<<html
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +30,7 @@ class Link_graber
 </body>
 </html>
 html
-
-    status, headers = 200, {"Content-Type" => "text/html"}
-    [status, headers, [form]]
-  end
+ end
 
 end
 
