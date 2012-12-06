@@ -10,7 +10,7 @@ class Parser
  def call(env)
    form = find_links('http://kote.dp.ua/', 1)
    status, headers = 200, {"Content-Type" => "text/html"}
-   [status, headers, form]
+   [status, headers, form.collect {|x| x + "\n " }]
  end
 
  def parse(page_name)
