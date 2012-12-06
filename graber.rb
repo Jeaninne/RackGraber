@@ -12,14 +12,14 @@ class Link_graber
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>Crawling</title>
 </head>
-<body style="background: #EEEEEE;"> 
- <form>
+<body style="background: #eee;"> 
+ <form name="input" action="parse" method="get">
     <p>
     Enter site: <input type="text" name="page_name"><br>
     Enter depth: <input type="text" name="depth"><br>
-    <input type="submit" value="parse it!" action="action.html" method="get">
+    <input type="submit" value="parse it!">
     </p>
  </form>
 </body>
