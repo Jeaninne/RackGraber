@@ -6,14 +6,7 @@ class Parser
 
 attr_accessor :link
  def initialize
- end
-
- def call(env)# вынести в отдельный класс и вызывать парсер
-  request = Rack::Request.new(env)
-  @link=[ request['page_name'] ]
-  form = find_links(request['page_name'], request['depth'].to_i)
-  status, headers = 200, {"Content-Type" => "text/html"}
-  [status, headers, form.collect {|x| x + "\n " }]
+  @link=[]
  end
 
  def parse(page_name)

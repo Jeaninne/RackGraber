@@ -1,10 +1,10 @@
-require './graber.rb'
-require './parse.rb'
+require './index.rb'
+require './linkgraber.rb'
 
 use Rack::Reloader
 
- run Link_graber.new
+ run FirstForm.new
 
  map '/parse' do
-  run Parser.new
+  run LinkGraber.new
  end

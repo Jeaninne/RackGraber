@@ -1,10 +1,7 @@
 require 'net/http'
 require 'open-uri'
 
-class Link_graber
-
- def initialize
- end
+class FirstForm
 
  def call(env)
     form = main_form
