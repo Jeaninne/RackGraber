@@ -13,7 +13,7 @@ attr_accessor :link
   array_of_parsed_links = []
   doc = Nokogiri::HTML(open(page_name))
    doc.xpath('//a').each do |link|
-   if !((link[:href]=='#') || !(link[:href].nil?)) then
+   if !((link[:href]=='#') || (link[:href].nil?)) then
      if link[:href].include?('http')
       then array_of_parsed_links << link[:href]  end
    end
